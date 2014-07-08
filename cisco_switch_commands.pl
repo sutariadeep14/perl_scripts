@@ -9,7 +9,6 @@ my $session = Net::Telnet::Cisco->new(Host => $host, -Prompt=>'/(?m:^[\w.&-]+\s?
 
 $session->login(Name => 'admin',Password => 'password');
 
-#my @ver = $session->cmd('show mac-address-table');
 $session->cmd('terminal length 0');
 my @ver = $session->cmd('show mac-address-table dynamic');
-#print @ver;
+print @ver;
